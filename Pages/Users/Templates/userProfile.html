@@ -1,0 +1,28 @@
+<div id="userProfile">
+    <div class="row">
+        <img ng-src="{{user.profile.avatar_url}}"
+             class="col-sm-3">
+        <div class="col-sm-9">
+            <h2>{{user.profile.name}}</h2>
+            <ul id="userInfo">
+                <li><strong>ID</strong>: {{::user.profile.id}}</li>
+                <li><strong>Login</strong>: {{::user.profile.login}}</li>
+                <li><strong>Company</strong>: {{::user.profile.company}}</li>
+                <li><strong>Email</strong>: {{::user.profile.email}}</li>
+                <li><strong>Location</strong>: {{::user.profile.location}}</li>
+                <li><strong>Created at</strong>: {{::user.profile.created_at  | date : fullDate}}</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="btn btn-primary btn-lg pull-left mt20"
+         ng-click="showUCPopup()">Create repository</div>
+
+    <div class="btn btn-default btn-lg pull-left mt20 ml20"
+         ng-click="changeUserProfileId('100')">Change user.profile.id to be 100</div>
+
+    <div class="clearfix"></div>
+    <div class="row">
+        <user-repositories user="user"></user-repositories>
+    </div>
+</div>

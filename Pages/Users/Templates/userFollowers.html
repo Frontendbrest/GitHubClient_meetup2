@@ -1,0 +1,13 @@
+<div id="userFollowers">
+    <div class="row">
+        <ul id="followersNavigation" class="col-sm-3">
+            <h2>{{isFollowers ? 'My followers' : "I'm following"}}</h2>
+            <li ng-repeat="follower in userFollowers"
+                ng-click="setActiveFollower(follower)"
+                class="{{follower.isActive ? 'active' : ''}}">
+                {{follower.login}}
+            </li>
+        </ul>
+        <user-repositories user="activeFollower"></user-repositories>
+    </div>
+</div>

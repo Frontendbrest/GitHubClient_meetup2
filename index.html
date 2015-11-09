@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="GitHubClient">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>GitHub client</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="Assets/Css/main.css" />
+</head>
+<body ng-controller="MainCtrl" class="{{navLinks[0].isActive ? 'blueBackground' : ''}}">
+    <div class="container">
+        <header ng-include="'Pages/Common/Templates/header.html'"></header>
+
+        <div id="view" ng-view></div>
+
+        <footer></footer>
+
+        <div ng-include="'Pages/Common/Templates/underConstructionPopup.html'"></div>
+    </div>
+
+    <!-- Libs -->
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="node_modules/angular-messages/angular-messages.js"></script>
+
+    <!-- Common -->
+    <script src="Pages/Common/module.js"></script>
+    <script src="Pages/Common/Controllers/mainCtrl.js"></script>
+
+    <!-- Home -->
+    <script src="Pages/Home/module.js"></script>
+    <script src="Pages/Home/Directives/userLoginExistsValidator.js"></script>
+    <script src="Pages/Home/Controllers/homeCtrl.js"></script>
+
+    <!-- Users -->
+    <script src="Pages/Users/module.js"></script>
+    <script src="Pages/Users/Directives/userRepositories.js"></script>
+    <script src="Pages/Users/Services/userDataSvc.js"></script>
+    <script src="Pages/Users/Filters/hasIssuesFilter.js"></script>
+    <script src="Pages/Users/Controllers/userProfileCtrl.js"></script>
+    <script src="Pages/Users/Controllers/userFollowersCtrl.js"></script>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+#home h1 {
+  margin-top: 150px;
+  text-align: center;
+  color: white;
+  font-size: 100px;
+}
+#home label {
+  font-size: 20px;
+  color: #286090;
+  margin-top: 20px;
+}
+#home input {
+  font-size: 20px;
+  height: 45px;
+}
+#home .btn {
+  margin-top: 20px;
+}
+.blueBackground {
+  background: #5bc0de;
+}

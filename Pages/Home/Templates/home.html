@@ -1,0 +1,36 @@
+<div id="home" style="margin: 20px;">
+    <h1>Home Page</h1>
+
+    <form id="loginForm" name="loginForm"
+          class="col-sm-6 col-sm-offset-3"
+          novalidate>
+
+        <label for="login">Enter User Login</label>
+        <input id="login"
+               name="userName"
+               class="form-control"
+               ng-model="userName"
+               required
+               minlength="3" />
+               <!--user-login-exists-validator />-->
+
+        <div ng-if="loginForm.userName.$pending" class="bg-info">
+            Checking userlogin...
+        </div>
+
+        <div ng-if="loginForm.$submitted || loginForm.userName.$touched"
+             ng-messages="loginForm.userName.$error">
+            <div class="bg-danger" ng-message="required">
+                Please, enter your userlogin.
+            </div>
+            <div class="bg-danger" ng-message="minlength">
+                Userlogin length should be more than or equal to 3.
+            </div>
+            <div class="bg-danger" ng-message="userLoginExists">
+                There is no user with such userlogin on GitHub.
+            </div>
+        </div>
+
+        <button class="btn btn-primary btn-lg col-sm-12" ng-click="logInUser(loginForm, userName)">Login</button>
+    </form>
+</div>
